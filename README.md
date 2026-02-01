@@ -12,11 +12,13 @@ Visualize your RDF data as a force-directed graph. Just use the `preview` modifi
 
 <img src="images/graph_example.png" width="600" alt="Graph Preview Example">
 
+````markdown
 ```turtle preview
 @prefix ex: <http://example.org/> .
 ex:John a ex:Person ;
     ex:knows ex:Jane .
 ```
+````
 
 The extension automatically:
 *   **Classifies Nodes**: 
@@ -44,6 +46,7 @@ Control what appears in your graph using simple flags in the code block header.
 **Examples:**
 
 *Hide literals to focus on relationships:*
+````markdown
 ```turtle preview no-literals
 @prefix ex: <http://example.org/> .
 ex:John a ex:Person ;
@@ -51,8 +54,10 @@ ex:John a ex:Person ;
     ex:age 30 ;          # Hidden
     ex:name "John" .     # Hidden
 ```
+````
 
 *Show only the ontology structure (no instances or literals):*
+````markdown
 ```turtle preview no-instances no-literals
 @prefix ex: <http://example.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -61,6 +66,7 @@ ex:Person a rdfs:Class .
 ex:Employee rdfs:subClassOf ex:Person .
 # Instances like ex:John a ex:Employee will be hidden
 ```
+````
 
 ### 4. Theme Support
 Fully compatible with both Dark and Light themes. The visualization colors adapt to ensure readability in any environment.
