@@ -1,0 +1,37 @@
+{
+    "scopeName": "markdown.sender.injection",
+    "injectionSelector": "L:text.html.markdown",
+    "patterns": [
+        {
+            "include": "#semantic-code-block"
+        }
+    ],
+    "repository": {
+        "semantic-code-block": {
+            "begin": "(^|\\G)(\\s*)(`{3,}|~{3,})\\s*(?i:(turtle|n3|trig|rdf))(\\s+(preview|graph))?\\s*$",
+            "beginCaptures": {
+                "3": {
+                    "name": "punctuation.definition.markdown"
+                },
+                "4": {
+                    "name": "fenced_code.block.language.markdown"
+                },
+                "5": {
+                    "name": "fenced_code.block.language.modifier.markdown"
+                }
+            },
+            "end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*$",
+            "endCaptures": {
+                "3": {
+                    "name": "punctuation.definition.markdown"
+                }
+            },
+            "patterns": [
+                {
+                    "contentName": "source.turtle",
+                    "include": "source.turtle"
+                }
+            ]
+        }
+    }
+}

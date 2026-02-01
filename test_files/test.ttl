@@ -1,0 +1,14 @@
+@prefix : <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@base <http://example.org/> .
+
+# This is a comment
+:alice a foaf:Person ;
+    foaf:name "Alice" ;
+    foaf:knows :bob .
+
+:bob a foaf:Person ;
+    foaf:name "Bob" ;
+    foaf:knows :alice .
+
+<http://example.org/spiderman> :loves "Mary Jane" .

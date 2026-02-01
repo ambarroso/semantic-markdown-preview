@@ -1,0 +1,108 @@
+{
+    "scopeName": "source.turtle",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#uris"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#support"
+        },
+        {
+            "include": "#prefix-names"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.turtle",
+                    "match": "#.*$"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "comment.hack.green.turtle",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.turtle",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "comment.hack.green.turtle",
+                    "begin": "\"\"\"",
+                    "end": "\"\"\""
+                }
+            ]
+        },
+        "uris": {
+            "patterns": [
+                {
+                    "name": "storage.type.uri.turtle",
+                    "match": "<[^>]+>"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.directive.turtle",
+                    "match": "(?i)(@prefix|@base|\\bBASE\\b|\\bPREFIX\\b)"
+                },
+                {
+                    "name": "keyword.control.turtle",
+                    "match": "\\ba\\b"
+                }
+            ]
+        },
+        "support": {
+            "patterns": [
+                {
+                    "name": "string.hack.orange.turtle",
+                    "match": "\\b(true|false)\\b"
+                },
+                {
+                    "name": "string.hack.orange.turtle",
+                    "match": "\\b[\\+\\-]?\\d+(\\.\\d+)?([eE][\\+\\-]?\\d+)?\\b"
+                }
+            ]
+        },
+        "prefix-names": {
+            "patterns": [
+                {
+                    "match": "(\\w*:)([^\\s\\.;,]+)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.name.function.turtle"
+                        },
+                        "2": {
+                            "name": "variable.other.readwrite.turtle"
+                        }
+                    }
+                },
+                {
+                    "match": "(\\w*:)",
+                    "captures": {
+                        "1": {
+                            "name": "entity.name.function.turtle"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

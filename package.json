@@ -1,0 +1,113 @@
+{
+  "name": "semantic-markdown-preview",
+  "displayName": "Semantic Markdown Preview",
+  "description": "Markdown preview extension for RDF/Turtle/N3 graphs",
+  "version": "0.0.1",
+  "publisher": "semantic-preview",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/semantic-markdown-preview"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "keywords": [
+    "rdf",
+    "turtle",
+    "n3",
+    "semantic web",
+    "knowledge graph",
+    "visualization",
+    "markdown"
+  ],
+  "categories": [
+    "Visualization",
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "languages": [
+      {
+        "id": "turtle",
+        "aliases": [
+          "Turtle",
+          "ttl",
+          "rdf",
+          "RDF"
+        ],
+        "extensions": [
+          ".ttl",
+          ".rdf"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "n3",
+        "aliases": [
+          "N3",
+          "n3"
+        ],
+        "extensions": [
+          ".n3"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "turtle",
+        "scopeName": "source.turtle",
+        "path": "./syntaxes/turtle.tmLanguage.json"
+      },
+      {
+        "language": "n3",
+        "scopeName": "source.n3",
+        "path": "./syntaxes/turtle.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.sender.injection",
+        "path": "./syntaxes/markdown-injection.json",
+        "injectTo": [
+          "text.html.markdown"
+        ]
+      }
+    ],
+    "markdown.markdownItPlugins": true,
+    "markdown.previewScripts": [
+      "./dist/renderer.js"
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "test-compile": "tsc -p .",
+    "test-watch": "tsc -p . -w",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/mocha": "^10.0.10",
+    "@types/n3": "^1.26.1",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "buffer": "^6.0.3",
+    "eslint": "^9.16.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "cytoscape": "^3.30.0",
+    "n3": "^1.17.0",
+    "highlight.js": "^11.9.0"
+  }
+}
