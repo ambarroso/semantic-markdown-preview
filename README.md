@@ -9,7 +9,7 @@ Get rich, semantic syntax highlighting for `turtle` and `n3` code blocks. Distin
 
 <img src="images/syntax_example.png" width="600" alt="Syntax Highlighting Example">
 
-<img src="images/syntax_example.png" width="600" alt="Syntax Highlighting Example">
+
 
 ````markdown
 ```turtle
