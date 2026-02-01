@@ -14,7 +14,6 @@ ex:John a ex:Person ;
     ex:name "John Doe" .
 ```
 ````
-
 <img src="images/syntax_example.png" width="500" alt="Syntax Highlighting Example">
 
 ### 2. Interactive Graph Visualization
@@ -24,14 +23,13 @@ Visualize your RDF data as a force-directed graph. You have two options:
 *   **`graph`**: Renders **ONLY** the graph visualization (hides the code).
 
 ````markdown
-```turtle preview
+```turtle graph
 @prefix ex: <http://example.org/> .
 ex:John a ex:Person ;
     ex:knows ex:Jane .
 ```
 ````
-
-<img src="images/graph_example.png" width="500" alt="Graph Preview Example">
+<img src="images/graph_example.png" width="500" alt="Graph Visualization Example">
 
 The extension automatically:
 *   **Classifies Nodes**: 
