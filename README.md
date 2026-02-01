@@ -7,6 +7,14 @@ A Visual Studio Code extension that brings your RDF, Turtle, and N3 files to lif
 ### 1. Enhanced Syntax Highlighting
 Get rich, semantic syntax highlighting for `turtle` and `n3` code blocks. Distinct colors for users, prefixes, IRIs, literals, and keywords make your data easier to read.
 
+````markdown
+```turtle
+@prefix ex: <http://example.org/> .
+ex:John a ex:Person ;
+    ex:name "John Doe" .
+```
+````
+
 ### 2. Interactive Graph Visualization
 Visualize your RDF data as a force-directed graph. Just use the `preview` modifier in your code block:
 
