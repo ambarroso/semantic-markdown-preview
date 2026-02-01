@@ -10,6 +10,8 @@ Get rich, semantic syntax highlighting for `turtle` and `n3` code blocks. Distin
 ### 2. Interactive Graph Visualization
 Visualize your RDF data as a force-directed graph. Just use the `preview` modifier in your code block:
 
+![Graph Preview Example](images/graph_example.png)
+
 ```turtle preview
 @prefix ex: <http://example.org/> .
 ex:John a ex:Person ;
