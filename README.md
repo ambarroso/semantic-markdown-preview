@@ -43,12 +43,21 @@ Control what appears in your graph using simple flags in the code block header.
 
 *Hide literals to focus on relationships:*
 ```turtle preview no-literals
-...
+@prefix ex: <http://example.org/> .
+ex:John a ex:Person ;
+    ex:knows ex:Jane ;
+    ex:age 30 ;          # Hidden
+    ex:name "John" .     # Hidden
 ```
 
 *Show only the ontology structure (no instances or literals):*
 ```turtle preview no-instances no-literals
-...
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:Person a rdfs:Class .
+ex:Employee rdfs:subClassOf ex:Person .
+# Instances like ex:John a ex:Employee will be hidden
 ```
 
 ### 4. Theme Support
